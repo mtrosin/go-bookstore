@@ -2,7 +2,7 @@
 This is a simple REST bookstore project to practice working with go language.
 
 # Installation
-It's very easy to install and start using it, just follow the steps:
+This project uses Docker, it's very easy to install and start using it. Just follow the steps:
 
 1. docker-compose build
 2. docker-compose up -d
@@ -12,11 +12,11 @@ It's very easy to install and start using it, just follow the steps:
 - http://localhost:9090 (phpmyadmin)
 
 # Examples
-GET: http://localhost:8080/book/
-GET by ID: http://localhost:8080/book/xxx
-POST: http://localhost:8080/book/ (change xxx to id; JSON parameters: name, author, publication)
-PUT (edit): http://localhost:8080/book/xxx (change xxx to id; JSON parameters: name, author, publication)
-DELETE: http://localhost:8080/book/xxx
+- GET: http://localhost:8080/book/
+- GET by ID: http://localhost:8080/book/xxx
+- POST: http://localhost:8080/book/ (change xxx to id; JSON parameters: name, author, publication)
+- PUT (edit): http://localhost:8080/book/xxx (change xxx to id; JSON parameters: name, author, publication)
+- DELETE: http://localhost:8080/book/xxx
 
 # ToDo
 - Implement JWT authentication;
