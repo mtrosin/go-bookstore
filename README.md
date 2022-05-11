@@ -19,5 +19,5 @@ This project uses Docker, it's very easy to install and start using it. Just fol
 - DELETE: http://localhost:8080/book/xxx
 
 # ToDo
-- Implement JWT authentication;
 - Add validation to some functions;
+- Add unit testing
