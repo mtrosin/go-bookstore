@@ -9,7 +9,7 @@ import(
 
 var (
 	db * gorm.DB
-	jwtKey = []byte("my_secret_key")
+	jwtKey = []byte(getEnvVariable("API_SECRET"))
 )
 
 func getEnvVariable(key string) string {
