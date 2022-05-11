@@ -35,6 +35,12 @@ func GetBookById(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
+	authStatus := utils.CheckToken(r)
+	if authStatus != 200 {
+		w.WriteHeader(authStatus)
+		return
+	}
+
 	CreateBook := &models.Book{}
 	utils.ParseBody(r, CreateBook)
 	b := CreateBook.CreateBook()
@@ -44,6 +50,12 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteBook(w http.ResponseWriter, r *http.Request) {
+	authStatus := utils.CheckToken(r)
+	if authStatus != 200 {
+		w.WriteHeader(authStatus)
+		return
+	}
+
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
 	ID, err := strconv.ParseInt(bookId, 0, 0)
@@ -58,6 +70,12 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 }
 
 func UpdateBook(w http.ResponseWriter, r * http.Request) {
+	authStatus := utils.CheckToken(r)
+	if authStatus != 200 {
+		w.WriteHeader(authStatus)
+		return
+	}
+	
 	var updateBook = &models.Book{}
 	utils.ParseBody(r, updateBook)
 	vars := mux.Vars(r)

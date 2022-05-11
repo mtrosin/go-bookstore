@@ -9,6 +9,7 @@ import(
 
 var (
 	db * gorm.DB
+	jwtKey = []byte("my_secret_key")
 )
 
 func getEnvVariable(key string) string {
@@ -33,4 +34,8 @@ func Connect() {
 
 func GetDB() *gorm.DB {
 	return db
+}
+
+func GetJwtKey() []byte {
+	return jwtKey
 }
